@@ -16,7 +16,7 @@ build: &build
     - type: shell
       name: chef-config rspec
       command: |
-        mkdir test_results
+        mkdir -p test_results
         cd chef-config
         sudo -E $(which bundle) exec rspec \
                            --profile 10 \
@@ -27,7 +27,7 @@ build: &build
     - type: shell
       name: chef rspec
       command: |
-        mkdir test_results
+        mkdir -p test_results
         sudo -E $(which bundle) exec rspec \
                            --profile 10 \
                            --format RspecJunitFormatter \
